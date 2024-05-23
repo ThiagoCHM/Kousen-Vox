@@ -1,0 +1,21 @@
+{
+  "name": "kousenvox",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "tsx watch src/http/server.ts"
+  },
+  "keywords": [],
+  "author": "Thiago C H Moreira <thiagochm@gmail.com> (https://thiagomoreira.dev/)",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@types/node": "^20.12.12",
+    "tsx": "^4.11.0",
+    "typescript": "^5.4.5"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "fastify": "^4.27.0"
+  }
+}
