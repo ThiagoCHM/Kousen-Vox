@@ -3,7 +3,7 @@ import { randomUUID } from 'node:crypto';
 import { prisma } from '../../lib/prisma';
 import { FastifyInstance } from 'fastify';
 import { redis } from "../../lib/redis";
-import { voting } from "../../utils/voting-pub-sub";
+import { voting } from "../../utils/voting-pub";
 
 export async function voteOnPoll(app: FastifyInstance) {
     app.post('/polls/:pollId/votes', async (request, reply) => {
@@ -53,7 +53,7 @@ export async function voteOnPoll(app: FastifyInstance) {
 
             reply.setCookie('sessionId', sessionId, {
                 path: '/',
-                maxAge: 60 * 60 * 24 * 30, // 30 days
+                maxAge: 60 * 60 * 24 * 30 * 3,
                 signed: true,
                 httpOnly: true,
             });
